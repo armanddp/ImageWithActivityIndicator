@@ -12,12 +12,12 @@ import Combine
 @available(iOS 13.0, *)
 public class ImageLoader :BindableObject {
     
-    public var didChange = PassthroughSubject<Data,Never>()
+    public var willChange = PassthroughSubject<Data,Never>()
 
 
     var data = Data() {
         didSet {
-            didChange.send(data)
+            willChange.send(data)
         }
     }
     let imageURL:String
